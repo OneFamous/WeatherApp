@@ -57,8 +57,11 @@ dependencies {
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3")
     implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation("com.google.code.gson:gson:2.8.9")
+
     implementation("com.github.bumptech.glide:glide:4.12.0")
     implementation("androidx.paging:paging-runtime:3.2.0")
     implementation("io.reactivex.rxjava2:rxjava:2.2.19")
@@ -67,4 +70,8 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
 
+
+    implementation ("com.google.dagger:hilt-android:2.40.5")
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 }
