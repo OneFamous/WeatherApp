@@ -1,4 +1,4 @@
-package com.fatihates.weatherapp.main
+package com.fatihates.weatherapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
