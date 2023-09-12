@@ -14,6 +14,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fatihates.weatherapp.R
+import com.fatihates.weatherapp.presentation.DeepBlue
 import com.fatihates.weatherapp.presentation.WeatherDataDisplay
 import com.fatihates.weatherapp.presentation.WeatherState
 import java.time.format.DateTimeFormatter
@@ -22,6 +23,7 @@ import kotlin.math.roundToInt
 @Composable
 fun WeatherCard(
     state: WeatherState,
+    backgroundColor: Color,
     modifier: Modifier = Modifier
 ) {
     state.weatherInfo?.currentWeatherData?.let { data ->
