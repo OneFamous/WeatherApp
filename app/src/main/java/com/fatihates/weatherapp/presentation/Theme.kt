@@ -1,8 +1,7 @@
-package com.fatihates.weatherapp.presentation.theme
+package com.fatihates.weatherapp.presentation
 
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import com.fatihates.weatherapp.presentation.Shapes
 
 @Composable
 fun WeatherAppTheme(content: @Composable () -> Unit) {

@@ -1,9 +1,9 @@
-package com.plcoding.weatherapp.di
+package com.fatihates.weatherapp.di
 
 import android.app.Application
-import com.fatihates.weatherapp.data.service.WeatherApi
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.fatihates.weatherapp.data.service.WeatherApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

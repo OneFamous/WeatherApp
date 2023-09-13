@@ -1,8 +1,10 @@
+package com.fatihates.weatherapp.presentation
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
-import androidx.compose.material3.Text
+import androidx.compose.material.Card
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,6 +30,7 @@ fun WeatherCard(
 ) {
     state.weatherInfo?.currentWeatherData?.let { data ->
         Card(
+            backgroundColor = backgroundColor,
             shape = RoundedCornerShape(10.dp),
             modifier = modifier.padding(16.dp)
         ) {

@@ -4,14 +4,10 @@ import android.Manifest
 import android.app.Application
 import android.content.Context
 import android.content.pm.PackageManager
-import android.health.connect.datatypes.ExerciseRoute
 import android.location.Location
 import android.location.LocationManager
-import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
-import com.fatihates.weatherapp.data.service.location.LocationTracker
 import com.google.android.gms.location.FusedLocationProviderClient
-import kotlinx.coroutines.CancellableContinuation
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.suspendCancellableCoroutine
 import javax.inject.Inject
@@ -21,9 +17,9 @@ import kotlin.coroutines.resume
 class DefaultLocationTracker @Inject constructor(
     private val locationClient: FusedLocationProviderClient,
     private val application: Application
-) : LocationTracker {
+): LocationTracker {
 
-    override suspend fun getCurrentLocation(): ExerciseRoute.Location? {
+    override suspend fun getCurrentLocation(): Location? {
         val hasAccessFineLocationPermission = ContextCompat.checkSelfPermission(
             application,
             Manifest.permission.ACCESS_FINE_LOCATION
@@ -33,18 +29,17 @@ class DefaultLocationTracker @Inject constructor(
             Manifest.permission.ACCESS_COARSE_LOCATION
         ) == PackageManager.PERMISSION_GRANTED
 
-        val locationManager =
-            application.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        val locationManager = application.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         val isGpsEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER) ||
                 locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
-        if (!hasAccessCoarseLocationPermission || !hasAccessFineLocationPermission || !isGpsEnabled) {
+        if(!hasAccessCoarseLocationPermission || !hasAccessFineLocationPermission || !isGpsEnabled) {
             return null
         }
 
         return suspendCancellableCoroutine { cont ->
             locationClient.lastLocation.apply {
-                if (isComplete) {
-                    if (isSuccessful) {
+                if(isComplete) {
+                    if(isSuccessful) {
                         cont.resume(result)
                     } else {
                         cont.resume(null)
@@ -64,8 +59,3 @@ class DefaultLocationTracker @Inject constructor(
         }
     }
 }
-
-private fun <T> CancellableContinuation<T>.resume(value: Location?) {
-    TODO("Not yet implemented")
-}
-

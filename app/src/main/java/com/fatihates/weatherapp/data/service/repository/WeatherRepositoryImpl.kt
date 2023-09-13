@@ -1,7 +1,6 @@
 package com.fatihates.weatherapp.data.service.repository
 
 
-import com.bumptech.glide.load.engine.Resource
 import com.fatihates.weatherapp.WeatherTypes.WeatherInfo
 import com.fatihates.weatherapp.data.service.WeatherApi
 import com.fatihates.weatherapp.data.service.mappers.toWeatherInfo
@@ -24,7 +23,7 @@ class WeatherRepositoryImpl @Inject constructor(
 
         } catch (e: Exception) {
             e.printStackTrace()
-            SorE.Error(e.message ?: "An unknown error occurred.")
+            SorE.Error(e.message ?: "Bir Problem Gerçekleşti!")
         }
     }
 }

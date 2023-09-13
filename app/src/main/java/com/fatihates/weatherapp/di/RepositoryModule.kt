@@ -1,15 +1,15 @@
 package com.fatihates.weatherapp.di
 
-import com.fatihates.weatherapp.data.service.location.DefaultLocationTracker
-import com.fatihates.weatherapp.data.service.location.LocationTracker
 import com.fatihates.weatherapp.data.service.repository.WeatherRepositoryImpl
 import com.fatihates.weatherapp.main.WeatherRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Singleton
 
+@ExperimentalCoroutinesApi
 @Module
 @InstallIn(SingletonComponent::class)
 

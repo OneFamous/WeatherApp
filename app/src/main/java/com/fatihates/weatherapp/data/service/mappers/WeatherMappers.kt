@@ -17,7 +17,7 @@ data class IndexedWeatherData(
 fun WeatherDataDto.toWeatherDataMap(): Map<Int, List<WeatherData>> {
     return time.mapIndexed() { index, time ->
         val temperature = temperatures[index]
-        val weatherCode = weathercodes[index]
+        val weatherCode = weatherCodes[index]
         val pressure = pressures[index]
         val windSpeed = windSpeeds[index]
         val humidity = humidities[index]

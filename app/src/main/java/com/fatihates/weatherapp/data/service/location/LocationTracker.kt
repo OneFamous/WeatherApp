@@ -1,8 +1,8 @@
 package com.fatihates.weatherapp.data.service.location
 
-import android.health.connect.datatypes.ExerciseRoute
+import android.location.Location
 
 interface LocationTracker {
-    suspend fun getCurrentLocation(): ExerciseRoute.Location?
+    suspend fun getCurrentLocation(): Location?
 
 }

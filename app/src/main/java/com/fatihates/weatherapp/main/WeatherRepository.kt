@@ -1,6 +1,5 @@
 package com.fatihates.weatherapp.main
 
-import com.bumptech.glide.load.engine.Resource
 import com.fatihates.weatherapp.WeatherTypes.WeatherInfo
 import com.fatihates.weatherapp.service.SorE
 

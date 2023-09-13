@@ -1,6 +1,5 @@
 package com.fatihates.weatherapp.presentation
 
-import WeatherCard
 import android.Manifest
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,17 +9,17 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Text
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.fatihates.weatherapp.presentation.theme.WeatherAppTheme
+import com.fatihates.weatherapp.presentation.DarkBlue
+import com.fatihates.weatherapp.presentation.DeepBlue
+import com.fatihates.weatherapp.presentation.WeatherAppTheme
 import dagger.hilt.android.AndroidEntryPoint
-
-//import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
